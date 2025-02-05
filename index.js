@@ -3,6 +3,7 @@ const express = require('express')
 
 const authRoutes = require('./routes/authRoutes');
 const jobRoutes = require('./routes/jobRoutes');
+const companyRoutes = require('./routes/companyRoutes')
 const app = express()
 
 
@@ -13,6 +14,7 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api', jobRoutes);
+app.use('/company',companyRoutes)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT,()=>console.log(`Server is running at ${PORT}`))
